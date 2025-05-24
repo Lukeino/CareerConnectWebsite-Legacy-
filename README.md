@@ -9,6 +9,7 @@
 ---
 
 🛠️ Attività da Completare (TODO)
+
 👤 Implementare:
 
 Registrazione utente (candidato)
