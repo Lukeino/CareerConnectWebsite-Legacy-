@@ -1,0 +1,20 @@
+/* Stili del form di login */
+.login-form {
+  width: 100%;
+}
+
+/* Messaggio di feedback */
+.login-message {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Messaggio di errore */
+.login-message.error {
+  color: #dc3545;
+}
+
+/* Messaggio di successo */
+.login-message.success {
+  color: #28a745;
+}
