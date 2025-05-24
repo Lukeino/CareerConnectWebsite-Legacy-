@@ -1,8 +1,17 @@
-## 📦 Ultimi Upload / Note di sviluppo
+📦 Ultimi Upload / Note di Sviluppo
+🔄 [23-05-2025] Aggiunto un file .css dedicato per ogni componente .jsx; ricommentati i file per maggiore chiarezza.
 
-- 🔄 [2025-05-23] Aggiunto un file .css per ogni file .jsx, ricommentati i file.
+🛠️ Attività da Completare (TODO)
+🔌 Verificare il corretto funzionamento del sito connesso al database.
+
+✅ [24-05-2025, ore 09:00] Completata attività pianificata.
 ---
-- 🚧 [TODO] Controllare che il sito funzioni, collegandolo al DB.
-- ✅ [FATTO] Attività svolta il 24-05-25 alle ore 9:00
----
-- 🚧 [TODO] Implementare registrazione, login candidato + cancellazione offerte
+
+🛠️ Attività da Completare (TODO)
+👤 Implementare:
+
+Registrazione utente (candidato)
+
+Login candidato
+
+Cancellazione offerte
