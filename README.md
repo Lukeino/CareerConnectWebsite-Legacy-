@@ -41,7 +41,7 @@ npm run dev
 ```
 🔧 Assicurati di avere un'istanza Strapi in esecuzione per testare le funzionalità connesse al database.
 
---
+---
 
 📓 Devlog: [docs/devlog.md](./docs/devlog.md)
 
