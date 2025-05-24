@@ -15,7 +15,7 @@ CareerConnect è una piattaforma web progettata per facilitare l'incontro tra ca
 
 | Front-end      | Back-end      | Altri strumenti |
 |----------------|---------------|-----------------|
-| React + Vite   | Strapi (Headless CMS) | ChatGPT, Claude.ai, Copilot |
+| React + Vite   | Strapi (Headless CMS) | --- |
 | CSS            | REST API Strapi | Git + GitHub |
 
 ---
