@@ -5,4 +5,4 @@
 - 🚧 [TODO] Controllare che il sito funzioni, collegandolo al DB.
 - ✅ [FATTO] Attività svolta il 24-05-25 alle ore 9:00
 ---
-- 🚧 [TODO] Controllare che il sito funzioni, collegandolo al DB.
+- 🚧 [TODO] Implementare registrazione, login candidato + filtraggio offerte
