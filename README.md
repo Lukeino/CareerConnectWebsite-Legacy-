@@ -1,4 +1,5 @@
 📦 Ultimi Upload / Note di Sviluppo
+
 🔄 [23-05-2025] Aggiunto un file .css dedicato per ogni componente .jsx; ricommentati i file per maggiore chiarezza.
 
 🛠️ Attività da Completare (TODO)
