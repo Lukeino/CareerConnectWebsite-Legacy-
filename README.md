@@ -5,6 +5,7 @@
 🔌 Verificare il corretto funzionamento del sito connesso al database.
 
 ✅ [24-05-2025, ore 09:00] Completata attività pianificata.
+
 ---
 
 🛠️ Attività da Completare (TODO)
