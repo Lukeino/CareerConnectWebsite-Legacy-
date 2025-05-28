@@ -1,180 +1,76 @@
-/* Importazione delle dipendenze necessarie */
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
-/* Importazione dei componenti */
-import Register from './Register';
-import Recruiter from './Recruiter';
-import AccessCandidate from './AccessCandidate';
+// Importa i tuoi componenti specifici per Recruiter
+import RegisterRecruiter from './RegisterRecruiter';
+import LoginRecruiter from './LoginRecruiter';
 import Welcome from './Welcome';
-import './App.css';
+import GestioneAnnunci from './GestioneAnnunci'; // Componente per la gestione annunci dei recruiter
 
-/* Componente principale dell'applicazione */
+import './App.css'; // Il tuo CSS principale
+import logo from './assets/logo.png'; // Aggiusta il percorso in base a dove hai messo l'immagine
+
 function AppContent() {
   const navigate = useNavigate();
-  const location = useLocation();
-  
-  /* Stati per la gestione dell'utente */
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  /* Stati per la gestione degli annunci */
-  const [showCreateBox, setShowCreateBox] = useState(false);
-  const [annuncioText, setAnnuncioText] = useState({
-    titolo: '',
-    descrizione: ''
-  });
-  
-  /* Stati per la gestione del caricamento e dei messaggi */
-  const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState('');
+  // --- LOGICA DI AUTENTICAZIONE CENTRALIZZATA ---
+  // Questa funzione è la "porta" per il login, chiamata da LoginRecruiter.jsx
+  const handleLoginSuccess = (userData, jwtToken) => {
+    localStorage.setItem('currentUser', JSON.stringify(userData));
+    localStorage.setItem('jwt', jwtToken);
+    setCurrentUser(userData);
+    setIsLoggedIn(true);
+    // Naviga alla dashboard del recruiter dopo il login
+    navigate('/recruiter-dashboard');
+  };
 
-  /* Verifica dello stato di autenticazione all'avvio */
+  // Logica di logout
+  const handleLogout = () => {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('jwt');
+    setCurrentUser(null);
+    setIsLoggedIn(false);
+    navigate('/welcome'); // Torna alla home o pagina di benvenuto
+  };
+
+  // Verifica lo stato di autenticazione all'avvio dell'app
   useEffect(() => {
-    const storedUser = localStorage.getItem('recruiterUser');
-    if (storedUser) {
+    const storedUser = localStorage.getItem('currentUser');
+    const storedJwt = localStorage.getItem('jwt');
+    if (storedUser && storedJwt) {
       try {
         const userData = JSON.parse(storedUser);
         setCurrentUser(userData);
         setIsLoggedIn(true);
+        // Se già loggato, reindirizza alla dashboard del recruiter
+        navigate('/recruiter-dashboard');
       } catch (error) {
-        console.error('Errore nel recuperare i dati utente:', error);
-        localStorage.removeItem('recruiterUser');
+        console.error('Errore nel recuperare i dati utente o JWT:', error);
+        localStorage.removeItem('currentUser');
+        localStorage.removeItem('jwt');
       }
     }
   }, []);
 
-  /* Gestione del login */
-  const handleLogin = (userData) => {
-    localStorage.setItem('recruiterUser', JSON.stringify(userData));
-    setCurrentUser(userData);
-    setIsLoggedIn(true);
-    navigate('/welcome');
+  // --- LOGICA DI NAVIGAZIONE HEADER ---
+  const handleRecruiterLoginClick = () => {
+    navigate('/recruiter-login');
   };
 
-  /* Gestione del logout */
-  const handleLogout = () => {
-    localStorage.removeItem('recruiterUser');
-    setCurrentUser(null);
-    setIsLoggedIn(false);
-    navigate('/welcome');
+  const handleRecruiterRegisterClick = () => {
+    navigate('/recruiter-register');
   };
 
-  /* Navigazione tra le pagine */
-  const handleRegisterClick = () => {
-    navigate('/recruiter');
-  };
-
-  const handleCandidateClick = () => {
-    navigate('/candidate');
-  };
-
-  /* Gestione del processo di login */
-  const [loginMessage, setLoginMessage] = useState('');
-
-  const handleLoginSubmit = async (loginData) => {
-    setLoginMessage('');
-    
-    if (!loginData.username.trim() || !loginData.password.trim()) {
-      setLoginMessage('Username e password sono obbligatori');
-      return;
-    }
-
-    try {
-      const response = await fetch(
-        `http://localhost:1337/api/recruiters?filters[username][$eq]=${encodeURIComponent(loginData.username)}`,
-        {
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json' }
-        }
-      );
-      const data = await response.json();
-      
-      if (data.data && data.data.length > 0 && data.data[0].password === loginData.password) {
-        const userData = {
-          id: data.data[0].id,
-          username: data.data[0].username,
-          nome: data.data[0].nome,
-          cognome: data.data[0].cognome,
-          email: data.data[0].email,
-          azienda: data.data[0].azienda
-        };
-        
-        setLoginMessage('Login effettuato con successo!');
-        
-        setTimeout(() => {
-          handleLogin(userData);
-        }, 800);
-      } else {
-        setLoginMessage('Username o password non corretti');
-      }
-    } catch (error) {
-      console.error('Errore di connessione al server:', error);
-      setLoginMessage('Errore di connessione al server');
-    }
-  };
-
-  /* Gestione della navigazione alla home */
   const handleTitleClick = () => {
     navigate('/welcome');
   };
 
-  /* Gestione del salvataggio degli annunci */
-  const handleSaveAnnuncio = async (e) => {
-    e.preventDefault();
-    
-    if (!isLoggedIn || !currentUser) {
-      setMessage('Devi essere loggato per creare un annuncio');
-      return;
-    }
-    
-    if (!annuncioText.titolo.trim() || !annuncioText.descrizione.trim()) {
-      setMessage('Tutti i campi sono obbligatori');
-      return;
-    }
+  const handleCandidateLoginClick = () => {
+  navigate('/candidate-login');
+};
 
-    setIsLoading(true);
-    setMessage('');
-
-    try {
-      const annuncioData = {
-        data: {
-          titolo: annuncioText.titolo.trim(),
-          descrizione: annuncioText.descrizione.trim()
-        }
-      };
-
-      const response = await fetch('http://localhost:1337/api/annuncios', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(annuncioData)
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setMessage('Annuncio salvato con successo!');
-        setAnnuncioText({ titolo: '', descrizione: '' });
-        setTimeout(() => {
-          setShowCreateBox(false);
-          setMessage('');
-        }, 2000);
-      } else {
-        console.error('Errore dal server:', data);
-        setMessage('Errore nel salvare l\'annuncio: ' + (data.error?.message || 'Errore sconosciuto'));
-      }
-    } catch (error) {
-      console.error('Errore di connessione:', error);
-      setMessage('Errore di connessione al server.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  /* Struttura del componente */
   return (
     <div className="app-container">
       <head>
@@ -182,13 +78,13 @@ function AppContent() {
       </head>
       <header className="app-header">
         <div className="header-content">
-          <h1 
+          <img
+            src={logo}
+            alt="CareerConnect Logo"
             className="clickable-title"
             onClick={handleTitleClick}
             title="Torna alla home"
-          >
-            CareerConnect
-          </h1>
+          />
           <input
             type="text"
             className="search-bar"
@@ -197,12 +93,7 @@ function AppContent() {
           <div className="auth-buttons">
             {isLoggedIn && currentUser ? (
               <div className="user-container">
-                <button
-                  className="create-button"
-                  onClick={() => setShowCreateBox(true)}
-                >
-                  Crea Annuncio
-                </button>
+                {/* Il pulsante "Crea Annuncio" sarà gestito all'interno di GestioneAnnunci */}
                 <button
                   className="logout-button"
                   onClick={handleLogout}
@@ -216,11 +107,11 @@ function AppContent() {
               </div>
             ) : (
               <>
-                <button className="login-button" onClick={handleCandidateClick}>
-                  Entra come CANDIDATO
+                <button className="login-button" onClick={handleRecruiterLoginClick}>
+                  Accedi come RECRUITER
                 </button>
-                <button className="register-button" onClick={handleRegisterClick}>
-                  Entra come RECRUITER
+                <button className="login-button candidate" onClick={handleCandidateLoginClick}>
+                  Accedi come CANDIDATO
                 </button>
               </>
             )}
@@ -231,83 +122,24 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Welcome currentUser={currentUser} />} />
           <Route path="/welcome" element={<Welcome currentUser={currentUser} />} />
-          <Route path="/register" element={<Register onLoginSubmit={handleLoginSubmit} loginMessage={loginMessage} />} />
-          <Route path="/recruiter" element={<Recruiter onLoginSubmit={handleLoginSubmit} loginMessage={loginMessage} />} />
-          <Route path="/candidate" element={<AccessCandidate />} />
+
+          {/* Rotte specifiche per i Recruiter */}
+          <Route path="/recruiter-register" element={<RegisterRecruiter />} />
+          <Route path="/recruiter-login" element={<LoginRecruiter onLoginSuccess={handleLoginSuccess} />} />
+
+          {/* Dashboard del Recruiter (protetta) */}
+          {isLoggedIn && currentUser?.roleType === 'recruiter' && (
+            <Route
+              path="/recruiter-dashboard"
+              element={<GestioneAnnunci currentUser={currentUser} handleLogout={handleLogout} />}
+            />
+          )}
+
+          {/* Fallback per rotte non trovate, o reindirizzamento se non loggato */}
+          <Route path="*" element={<Welcome currentUser={currentUser} />} />
         </Routes>
 
-        {isLoggedIn && currentUser && showCreateBox && (
-          <div className="modal-overlay">
-            <form onSubmit={handleSaveAnnuncio} className="create-form">
-              <h2 className="form-title">Crea un nuovo annuncio</h2>
-              
-              <div className="creator-info">
-                Stai creando come: <strong>{currentUser?.nome} {currentUser?.cognome}</strong>
-              </div>
-              
-              {message && (
-                <div className={`feedback-message ${message.includes('Errore') ? 'error' : 'success'}`}>
-                  {message}
-                </div>
-              )}
-
-              <div className="form-field-container">
-                <label htmlFor="titolo" className="form-label">
-                  Titolo *
-                </label>
-                <input
-                  type="text"
-                  id="titolo"
-                  name="titolo"
-                  value={annuncioText.titolo}
-                  onChange={e => setAnnuncioText({ ...annuncioText, titolo: e.target.value })}
-                  disabled={isLoading}
-                  className="form-input"
-                  placeholder="Es. Sviluppatore Frontend React"
-                  required
-                />
-              </div>
-              
-              <div className="form-field-container">
-                <label htmlFor="descrizione" className="form-label">
-                  Descrizione *
-                </label>
-                <textarea
-                  id="descrizione"
-                  name="descrizione"
-                  value={annuncioText.descrizione}
-                  onChange={e => setAnnuncioText({ ...annuncioText, descrizione: e.target.value })}
-                  disabled={isLoading}
-                  className="form-textarea"
-                  placeholder="Descrizione dettagliata della posizione..."
-                  required
-                />
-              </div>
-              
-              <div className="form-buttons">
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="save-button"
-                >
-                  {isLoading ? 'Salvando...' : 'Salva Annuncio'}
-                </button>
-                <button
-                  type="button"
-                  disabled={isLoading}
-                  className="cancel-button"
-                  onClick={() => {
-                    setShowCreateBox(false);
-                    setAnnuncioText({ titolo: '', descrizione: '' });
-                    setMessage('');
-                  }}
-                >
-                  Annulla
-                </button>
-              </div>
-            </form>
-          </div>
-        )}
+        {/* Il modal per la creazione annunci è stato spostato in GestioneAnnunci.jsx */}
       </main>
       <footer className="app-footer">
         <p>© 2025 CareerConnect. Tutti i diritti riservati.</p>
@@ -316,7 +148,6 @@ function AppContent() {
   );
 }
 
-/* Componente wrapper per il routing */
 function App() {
   return (
     <Router>
