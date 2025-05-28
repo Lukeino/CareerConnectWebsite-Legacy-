@@ -1,0 +1,258 @@
+/* Stili globali per un reset minimale e font */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Un font pulito e moderno */
+  background-color: #f0f2f5; /* Un leggero colore di sfondo per il body */
+  color: #333;
+}
+
+/* Contenitore principale */
+.register-container {
+  display: flex; /* Utilizzo di flexbox per centrare il contenuto */
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: 100vh; /* Occupazione dell'intera altezza della viewport */
+  padding: 20px; /* Padding generale per evitare che il contenuto tocchi i bordi */
+  box-sizing: border-box; /* Include padding e border nella larghezza/altezza totale */
+  gap: 40px; /* Spazio tra la GIF e il form */
+}
+
+/* Contenitore della GIF */
+.gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Impedisce alla GIF di restringersi */
+  background: none; /* Rimuove eventuali sfondi */
+}
+
+.recruiter-gif {
+  width: 650px; /* Larghezza predefinita per la GIF, puoi modificarla a piacimento */
+  height: auto; /* Mantiene le proporzioni */
+  border-radius: 12px; /* Bordi arrotondati per la GIF */
+  box-shadow: none; /* Rimuove l'ombra */
+}
+
+/* Wrapper per il titolo e il form */
+.form-and-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra il titolo e il form */
+  max-width: 650px; /* Larghezza massima per il form */
+  width: 100%;
+}
+
+.form-title {
+  color: #333333 !important; /* o il colore che preferisci */
+  margin-bottom: 40px !important; /* Spazio sotto il titolo */
+  font-size: 2.2em; /* Dimensione del titolo leggermente maggiore */
+  font-weight: 600; /* Leggermente più grassetto */
+  text-align: center; /* Centra il titolo */
+}
+
+/* Form wrapper */
+.form-wrapper {
+  background-color: #ffffff; /* Sfondo bianco per il form */
+  padding: 40px 50px; /* Aumentato il padding interno per più respiro */
+  border-radius: 12px; /* Bordi più arrotondati */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Ombra più pronunciata e morbida */
+  width: 100%; /* Occupa tutta la larghezza disponibile fino al max-width */
+  box-sizing: border-box;
+}
+
+/* Larghezze specifiche per wrapper, se necessario.
+   Considera di gestire la larghezza del form all'interno di .form-wrapper
+   per evitare sovrapposizioni e per un layout più flessibile.
+   Mantengo queste classi ma le rendo più adattabili.
+*/
+.login-wrapper {
+  max-width: 400px; /* Leggermente più largo per il login */
+}
+
+.register-wrapper {
+  max-width: 700px; /* Larghezza adeguata per il form di registrazione con più campi */
+}
+
+/* Form di login - Aggiusto per essere usato all'interno di form-wrapper */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Aumentato lo spazio tra gli elementi del form */
+  width: 100%; /* Occupa tutta la larghezza del form-wrapper */
+  margin: 0 auto;
+}
+
+/* Input comuni */
+.form-input {
+  width: 100%;
+  padding: 12px 15px; /* Padding interno aumentato per un look più moderno */
+  border-radius: 8px; /* Bordi più arrotondati */
+  border: 1px solid #dcdcdc; /* Colore del bordo più delicato */
+  font-size: 1.05rem; /* Dimensione del font leggermente maggiore */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transizione al focus */
+  box-sizing: border-box; /* Importante per il width: 100% */
+}
+
+.form-input:focus {
+  border-color: #007bff; /* Bordo blu al focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Ombra leggera al focus */
+  outline: none; /* Rimuove l'outline di default del browser */
+}
+
+/* Label comuni */
+.form-label {
+  display: block;
+  margin-bottom: 8px; /* Spazio sotto la label */
+  font-weight: 600; /* Rende la label più leggibile */
+  color: #555;
+  text-align: left; /* Allinea le label a sinistra */
+}
+
+/* Gruppo di input */
+.input-group {
+  margin-bottom: 20px; /* Aumentato lo spazio tra i gruppi di input */
+}
+
+.input-row {
+  display: flex;
+  gap: 25px; /* Aumentato lo spazio tra le colonne */
+  margin-bottom: 20px; /* Aumentato lo spazio sotto la riga */
+  flex-wrap: wrap; /* Permette il wrap delle colonne su schermi piccoli */
+}
+
+.input-col {
+  flex: 1;
+  min-width: 250px; /* Larghezza minima per le colonne su schermi più piccoli */
+}
+
+/* Bottoni */
+.btn {
+  padding: 12px 25px; /* Padding aumentato per bottoni più "cliccabili" */
+  border: none;
+  border-radius: 8px; /* Bordi più arrotondati */
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 700; /* Testo più grassetto per i bottoni */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Animazioni al hover/active */
+  box-sizing: border-box;
+  text-align: center; /* Assicura che il testo sia centrato nel bottone */
+}
+
+.btn:hover {
+  transform: translateY(-2px); /* Effetto leggero al passaggio del mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombra al hover */
+}
+
+.btn:active {
+  transform: translateY(0); /* Ritorno alla posizione normale al click */
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: #007bff; /* Colore primario */
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Scurisce al hover */
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-wide {
+  width: 100%; /* Il bottone occupa l'intera larghezza disponibile */
+  margin-top: 10px; /* Spazio sopra il bottone per separarlo dagli input */
+}
+
+/* Messaggi di feedback */
+.message {
+  margin-top: 20px; /* Più spazio sopra il messaggio */
+  padding: 12px; /* Padding aumentato */
+  border-radius: 8px; /* Bordi arrotondati */
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.message-success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.message-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* Sezione login */
+.login-section {
+  margin-top: 30px; /* Spazio maggiore sopra la sezione login */
+  padding-top: 20px; /* Padding interno per separare visivamente */
+  border-top: 1px solid #eee; /* Linea separatrice sottile */
+  text-align: center;
+}
+
+.login-text {
+  margin-bottom: 15px; /* Spazio sotto il testo */
+  color: #666; /* Colore più tenue per il testo secondario */
+  font-size: 1.05rem;
+}
+
+/* Media Queries per la responsività */
+@media (max-width: 992px) {
+  .register-container {
+    flex-direction: column; /* Impila la GIF e il form su schermi più piccoli */
+    gap: 20px; /* Riduci lo spazio tra gli elementi impilati */
+  }
+
+  .recruiter-gif {
+    width: 200px; /* Riduci la dimensione della GIF su schermi più piccoli */
+  }
+}
+
+@media (max-width: 768px) {
+  .form-wrapper {
+    padding: 30px; /* Riduci il padding su schermi più piccoli */
+  }
+
+  .input-row {
+    flex-direction: column; /* Impila le colonne su schermi più piccoli */
+    gap: 15px; /* Riduci lo spazio tra gli input impilati */
+  }
+
+  .input-col {
+    min-width: unset; /* Rimuovi la larghezza minima quando impilato */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 1.8em; /* Riduci la dimensione del titolo */
+  }
+
+  .form-wrapper {
+    padding: 20px; /* Ulteriore riduzione del padding */
+  }
+
+  .recruiter-gif {
+    width: 150px; /* Ulteriore riduzione della GIF su schermi molto piccoli */
+  }
+}

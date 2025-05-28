@@ -1,0 +1,454 @@
+/* Container principale */
+.welcome-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 140px);
+}
+
+/* Header sezione */
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #0d7bd4;
+  padding-bottom: 20px;
+}
+
+.section-title {
+  color: #0d7bd4;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Messaggio di benvenuto */
+.welcome-message {
+  background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border: 1px solid #0d7bd4;
+  text-align: center;
+}
+
+.welcome-text {
+  margin: 0;
+  color: #0d7bd4;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.company-info {
+  margin-left: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Loader */
+.loader-container {
+  text-align: center;
+  padding: 50px;
+  color: #666;
+}
+
+.loader {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #0d7bd4;
+  border-radius: 50%;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+.loader-text {
+  font-size: 1.1rem;
+}
+
+/* Messaggio di errore */
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #ffcdd2;
+}
+
+.retry-button {
+  margin-left: 15px;
+  padding: 8px 16px;
+  background: #c62828;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Nessun annuncio */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px dashed #dee2e6;
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.no-results-title {
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.no-results-text {
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+/* Contatore annunci */
+.annunci-counter {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Griglia annunci */
+.annunci-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Card annuncio */
+.annuncio-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: fit-content;
+  min-height: 120px;
+  max-height: 180px;
+  overflow: hidden;
+}
+
+.annuncio-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  border-color: #0d7bd4;
+}
+
+/* Header annuncio */
+.annuncio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.annuncio-title {
+  color: #0d7bd4;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+
+.annuncio-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Descrizione annuncio */
+.annuncio-description {
+  color: #495057;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 57px;
+}
+
+/* Footer annuncio */
+.annuncio-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f8f9fa;
+  padding-top: 12px;
+}
+
+.annuncio-meta {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.annuncio-button {
+  background: #0d7bd4;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.annuncio-button:hover {
+  background: #0a6bb3;
+}
+
+/* Animazione loader con prefissi vendor */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+/* Stile per il pulsante "Crea Annuncio" nella pagina Welcome */
+.welcome-create-button {
+  background-color: #0d7bd4;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.welcome-create-button:hover {
+  background-color: #0969ba;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+/* Miglioramento del messaggio di benvenuto */
+.welcome-message {
+  background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border: 1px solid #0d7bd4;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-text {
+  margin: 0;
+  color: #0d7bd4;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Modal per la creazione annuncio */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Form creazione annuncio */
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 500px;
+  max-width: 90vw;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 32px;
+  align-items: center;
+}
+
+/* Titolo form */
+.form-title {
+  text-align: center;
+  color: #0d7bd4;
+  margin: 0;
+  width: 100%;
+}
+
+/* Informazioni creatore */
+.creator-info {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Messaggi di feedback */
+.feedback-message {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.feedback-message.error {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.feedback-message.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Container campi form */
+.form-field-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Etichette form */
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  align-self: flex-start;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Input di testo */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.form-input:disabled {
+  background-color: #f5f5f5;
+}
+
+/* Area di testo */
+.form-textarea {
+  width: 100%;
+  min-height: 120px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #222;
+  font-size: 1rem;
+  text-align: left;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-textarea:disabled {
+  background-color: #f5f5f5;
+}
+
+/* Container pulsanti form */
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Pulsante salva */
+.save-button {
+  padding: 12px 24px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  min-width: 120px;
+}
+
+.save-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Pulsante annulla */
+.cancel-button {
+  padding: 12px 24px;
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  min-width: 120px;
+}
+
+.cancel-button:disabled {
+  cursor: not-allowed;
+}
+
+/* Responsività */
+@media (max-width: 768px) {
+  .welcome-create-button {
+    width: 90%;
+    max-width: 300px;
+  }
+}
