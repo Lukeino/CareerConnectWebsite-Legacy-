@@ -55,9 +55,9 @@ function Welcome({ currentUser }) {
     <div className="welcome-container">
       {/* Header della sezione */}
       <div className="section-header">
-        <h1 className="section-title">Opportunità di Lavoro</h1>
+        <h1 className="section-title">Nuove offerte di lavoro</h1>
         <p className="section-subtitle">
-          Scopri le ultime posizioni aperte dalle nostre aziende partner
+          Scopri le ultime posizioni aperte dei recruiter
         </p>
       </div>
 

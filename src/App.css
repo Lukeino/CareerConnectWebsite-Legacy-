@@ -1,39 +1,53 @@
 /* Contenitore radice dell'applicazione */
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+}
+
+/* Stile del titolo nell'header */
+.app-header h1 {
+  font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+  font-size: 2.1rem;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: white;
 }
 
 /* Stili globali del body */
 body {
   margin: 0;
   font-family: 'Inter', Arial, sans-serif;
-  background: linear-gradient(135deg, #ffffff, #ffffff);
-  color: #000000;
+  background: linear-gradient(135deg, #f0f2f5, #e0e4e8); /* Tonalità più chiare */
+  color: #333; /* Colore testo più scuro per contrasto */
 }
 
 /* Contenitore principale dell'applicazione */
 .app-container {
-  display: flex;
+  display: center;
   flex-direction: column;
   min-height: 100vh;
 }
 
 /* Header dell'applicazione */
 .app-header {
-  background-color: #0d7bd4;
+  background-color: #050f32;
   color: white;
   text-align: left;
-  padding: 10px 20px;
-  position: fixed;
+  padding: 10px 20px; /* Ridotto il padding verticale */
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 1000;
   box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: 90px; /* Altezza fissa per l'header */
+  display: flex;
+  align-items: center;
 }
 
 /* Layout del contenuto dell'header */
@@ -42,33 +56,32 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-}
-
-/* Stile del titolo nell'header */
-.app-header h1 {
-  font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
-  font-size: 2rem;
-  margin: 0;
-  font-weight: 500;
 }
 
 /* Barra di ricerca */
 .search-bar {
-  padding: 10px 15px;
+  padding: 10px 18px; /* Aumentato padding */
   font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  width: 400px;
-  background-color: #f9f9f9;
+  border: none; /* Rimosso bordo */
+  border-radius: 25px; /* Più arrotondato */
+  width: 450px; /* Aumentata larghezza */
+  background-color: rgba(255, 255, 255, 0.2); /* Sfondo semi-trasparente */
+  color: white;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.8); /* Colore placeholder */
 }
 
 /* Effetto focus sulla barra di ricerca */
 .search-bar:focus {
   outline: none;
-  border-color: #a6c8ff;
-  box-shadow: 0 0 5px rgba(166, 200, 255, 0.5);
+  background-color: white; /* Sfondo bianco al focus */
+  color: #333;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4); /* Anello di focus più visibile */
 }
 
 /* Contenuto principale */
@@ -77,53 +90,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 80px;
-  min-height: calc(100vh - 80px);
-}
-
-/* Stili del logo */
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-/* Animazione del logo */
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Applicazione dell'animazione del logo */
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+  padding-top: 90px; /* Aumentato per lasciare spazio all'header sticky */
+  padding-bottom: 20px; /* Spazio prima del footer */
+  min-height: calc(100vh - 80px); /* Regolato */
 }
 
 /* Footer dell'applicazione */
 .app-footer {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #f8f8f8; /* Sfondo più chiaro */
+  color: #555; /* Colore testo più morbido */
   text-align: center;
-  padding: 10px 0;
-  font-size: 0.7rem;
-  line-height: 1.2;
-  position: relative;
-  width: 100%;
+  padding: 15px 0; /* Aumentato padding */
+  font-size: 0.85rem; /* Leggermente più grande */
+  line-height: 1.4;
+  border-top: 1px solid #eee; /* Bordo superiore sottile */
   margin-top: auto;
 }
 
@@ -131,100 +111,71 @@ body {
 .auth-buttons {
   display: flex;
   gap: 10px;
-  margin-right: 40px;
+  margin-right: 0; /* Rimosso margine destro fisso */
 }
 
 /* Stili comuni per i pulsanti login e registrazione */
 .login-button,
-.register-button {
-  padding: 8px 15px;
-  font-size: 0.9rem;
-  border: 1px solid #3863bb;
-  border-radius: 5px;
+.register-button,
+.logout-button,
+.create-button { /* Aggiunto create-button per coerenza */
+  padding: 10px 18px;
+  font-size: 0.95rem; /* Leggermente più grande */
+  border: none; /* Bordo rimosso, useremo box-shadow */
+  border-radius: 25px; /* Più arrotondato */
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease;
   width: auto;
   text-align: center;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* Stili specifici per il pulsante di login */
 .login-button {
-  background-color: #3863bb;
+  background-color: #bb3838;
   color: #fff;
+}
+
+.login-button:hover {
+  background-color: #2e53a0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* Stili specifici per il pulsante di registrazione */
 .register-button {
   background-color: #fff;
-  color: #3863bb;
+  color: #0d7bd4;
+  border: 1px solid #0d7bd4; /* Aggiunto bordo per distinguerlo */
 }
 
-/* Pulsante home */
-.home-button {
-  background: none;
-  color: #fff;
-  border: none;
-  font-size: 0.9rem;
-  cursor: pointer;
-  padding: 8px 15px;
-  transition: text-decoration 0.2s;
+.register-button:hover {
+  background-color: #e0f2ff;
+  color: #0a6bbd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Area candidato */
-.candidate-area {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  margin-top: 40px;
-  width: 100%;
+/* Pulsante logout */
+.logout-button {
+  background: #dc3545;
+  color: white;
 }
 
-/* Box del candidato */
-.candidate-box {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-  padding: 12px 48px 24px 48px;
-  min-width: 600px;
-  max-width: 700px;
-  min-height: 300px;
-  height: 350px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+.logout-button:hover {
+  background: #c82333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Grid degli annunci */
-.annunci-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 20px;
-  margin-bottom: 40px;
+/* Pulsante Crea Annuncio (se dovesse essere qui, altrimenti lo stile andrà con il componente) */
+.create-button {
+  background-color: #28a745; /* Verde per l'azione positiva */
+  color: white;
+  margin-right: 10px; /* Spazio dal logout */
 }
 
-/* Card degli annunci */
-.annuncio-card {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e9ecef;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  height: fit-content;
-  min-height: 120px;
-  max-height: 180px;
-  overflow: hidden;
-}
-
-/* Titolo cliccabile nell'header */
-.clickable-title {
-  cursor: pointer;
-  transition: color 0.2s ease;
-  user-select: none;
+.create-button:hover {
+  background-color: #218838;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* Contenitore utente loggato */
@@ -232,241 +183,122 @@ body {
   display: flex;
   align-items: center;
   margin-left: 20px;
-  font-size: 1.2rem;
-}
-
-/* Pulsante crea annuncio */
-.create-button {
-  margin-right: 12px;
-  padding: 7px 16px;
-  background: #0d7bd4;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-/* Pulsante logout */
-.logout-button {
-  margin-right: 12px;
-  padding: 7px 16px;
-  background: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-size: 1rem; /* Leggermente più piccolo per equilibrio */
+  color: white; /* Assicurati che il testo sia visibile sull'header */
 }
 
 /* Icona utente */
 .user-icon {
-  font-size: 1.7rem;
-  margin-right: 8px;
+  font-size: 1.8rem; /* Aumentato leggermente */
+  margin-right: 10px;
 }
 
 /* Nome utente */
 .user-name {
   font-weight: bold;
+  white-space: nowrap; /* Evita che il nome vada a capo */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Leggera ombra per leggibilità */
 }
 
-/* Modal creazione annuncio */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-/* Form creazione annuncio */
-.create-form {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  width: 500px;
-  max-width: 90vw;
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  padding: 32px;
-  align-items: center;
-}
-
-/* Titolo form */
-.form-title {
-  text-align: center;
-  color: #0d7bd4;
-  margin: 0;
-  width: 100%;
-}
-
-/* Informazioni creatore */
-.creator-info {
-  font-size: 0.9rem;
-  color: #666;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* Messaggi di feedback */
-.feedback-message {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.feedback-message.error {
-  background-color: #ffebee;
-  color: #c62828;
-}
-
-.feedback-message.success {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-}
-
-/* Container campi form */
-.form-field-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Etichette form */
-.form-label {
-  display: block;
-  margin-bottom: 5px;
-  align-self: flex-start;
-  font-weight: 500;
-  color: #333;
-}
-
-/* Input di testo */
-.form-input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  text-align: left;
-}
-
-.form-input:disabled {
-  background-color: #f5f5f5;
-}
-
-/* Area di testo */
-.form-textarea {
-  width: 100%;
-  min-height: 120px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  color: #222;
-  font-size: 1rem;
-  text-align: left;
-  resize: vertical;
-  font-family: inherit;
-}
-
-.form-textarea:disabled {
-  background-color: #f5f5f5;
-}
-
-/* Container pulsanti form */
-.form-buttons {
-  display: flex;
-  gap: 15px;
-  width: 100%;
-  justify-content: center;
-}
-
-/* Pulsante salva */
-.save-button {
-  padding: 12px 24px;
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+/* Titolo cliccabile nell'header */
+.clickable-title {
+  height: 230px; /* Può essere più grande dell'header */
+  width: auto;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
-  min-width: 120px;
+  transition: transform 0.2s ease;
+  user-select: none;
+  position: relative; /* Aggiunto per il posizionamento */
+  top: 50%; /* Centro verticale */
+  transform: translateY(-10%); /* Aggiustamento fine del centro */
+  transform: translateX(20%);
+  margin-right: 50px; /* Spazio a destra del logo */
 }
 
-.save-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.clickable-title:hover {
+  transform: translateX(20%) scale(1.05); /* Aggiungiamo solo un leggero zoom */
 }
 
-/* Pulsante annulla */
-.cancel-button {
-  padding: 12px 24px;
-  background-color: #6c757d;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  min-width: 120px;
+/* Stile specifico per il pulsante login candidato */
+.login-button.candidate {
+  background-color: #ffffff;  /* Verde per distinguerlo dal recruiter */
+  color: rgb(27, 21, 88);
+  margin-top: 1px;  /* Spazio tra i due bottoni */
 }
 
-.cancel-button:disabled {
-  cursor: not-allowed;
+.login-button.candidate:hover {
+  background-color: #98b2de;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Aggiorna la media query per gestire il responsive */
+@media (max-width: 500px) {
+  .login-button, 
+  .register-button, 
+  .logout-button, 
+  .create-button,
+  .login-button.candidate {
+    width: 90%;
+    max-width: 250px;
+  }
 }
 
 /* Media queries per la responsività */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header-content {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .search-bar {
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  .auth-buttons {
-    margin-right: 0;
+    flex-wrap: wrap; /* Permette agli elementi di andare a capo */
     justify-content: center;
   }
   
-  .candidate-area {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .candidate-box {
-    min-width: auto;
-    width: 90%;
-    max-width: 500px;
+  .app-header h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
-  /* Responsive per gli annunci */
-  .annunci-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .search-bar {
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 10px;
   }
   
-  .welcome-container {
-    padding: 15px;
+  .auth-buttons {
+    width: 100%;
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .user-container {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 10px; /* Spazio dall'alto */
+  }
+
+  .user-icon {
+    margin-right: 5px;
+  }
+
+  .logout-button, .create-button {
+    margin-right: 5px;
+  }
+
+  .app-main {
+    padding-top: 140px; /* Aumentato per l'header che potrebbe occupare più linee */
   }
 }
 
-@media (max-width: 600px) {
-  .annunci-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 500px) {
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .auth-buttons {
+    flex-direction: column; /* I pulsanti si impilano */
+    gap: 8px;
+  }
+
+  .login-button, .register-button, .logout-button, .create-button {
+    width: 90%; /* Occupano quasi tutta la larghezza */
+    max-width: 250px;
   }
 }

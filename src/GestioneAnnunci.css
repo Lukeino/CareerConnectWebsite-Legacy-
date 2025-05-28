@@ -1,0 +1,166 @@
+/* Pulsante crea annuncio */
+.create-button {
+  margin-right: 12px;
+  padding: 7px 16px;
+  background: #0d7bd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Modal creazione annuncio */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Form creazione annuncio */
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 500px;
+  max-width: 90vw;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 32px;
+  align-items: center;
+}
+
+/* Titolo form */
+.form-title {
+  text-align: center;
+  color: #0d7bd4;
+  margin: 0;
+  width: 100%;
+}
+
+/* Informazioni creatore */
+.creator-info {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Messaggi di feedback */
+.feedback-message {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.feedback-message.error {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.feedback-message.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Container campi form */
+.form-field-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Etichette form */
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  align-self: flex-start;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Input di testo */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.form-input:disabled {
+  background-color: #f5f5f5;
+}
+
+/* Area di testo */
+.form-textarea {
+  width: 100%;
+  min-height: 120px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #222;
+  font-size: 1rem;
+  text-align: left;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-textarea:disabled {
+  background-color: #f5f5f5;
+}
+
+/* Container pulsanti form */
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Pulsante salva */
+.save-button {
+  padding: 12px 24px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  min-width: 120px;
+}
+
+.save-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Pulsante annulla */
+.cancel-button {
+  padding: 12px 24px;
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  min-width: 120px;
+}
+
+.cancel-button:disabled {
+  cursor: not-allowed;
+}
