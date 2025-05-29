@@ -11,7 +11,7 @@
 ## 2025-05-23
 - Sistemazione commenti e creazione file .css
 
-# 2025-05-28
+## 2025-05-28
 - Modificata interfaccia generale
 - Aggiunti form di Registrazione/Login per Recruiter/Candidato
 - Aggiunta la possibilità di pubblicare Annunci
