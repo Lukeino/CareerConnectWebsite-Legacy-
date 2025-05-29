@@ -11,6 +11,10 @@
 ## 2025-05-23
 - Sistemazione commenti e creazione file .css
 
-## In arrivo
-- Form di registrazione e login candidato
-- Cancellazione offerte recruiter post-pubblicazione
+# 2025-05-28
+- Modificata interfaccia generale
+- Aggiunti form di Registrazione/Login per Recruiter/Candidato
+- Aggiunta la possibilità di pubblicare Annunci
+- Possibilità di Modifica visibilità, Modifica testuale o Eliminazione Annunci
+- Modifica profilo Recruiter
+- Dashboard Recruiter con conteggio Annunci, Candidature e Visite profilo
