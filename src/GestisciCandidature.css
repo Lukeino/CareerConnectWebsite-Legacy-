@@ -1,0 +1,821 @@
+/* GestisciCandidature.css */
+
+.gestisci-candidature-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.gestisci-candidature-header {
+  background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gestisci-candidature-header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.gestisci-candidature-header p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+  text-align: left;
+}
+
+.candidature-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.candidature-sidebar {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  position: sticky;
+  top: 20px;
+}
+
+.candidature-sidebar h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;  color: #2c3e50;
+  border-bottom: 2px solid #dc3545;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.filter-group {
+  margin-bottom: 25px;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.stats-card {
+  background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.stats-card h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.stats-card .number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.candidature-main {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+}
+
+.candidature-list {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.candidatura-item {
+  padding: 20px;
+  border-bottom: 1px solid #f1f3f4;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.candidatura-item:hover {
+  background-color: #f8f9fa;
+}
+
+.candidatura-item.selected {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+}
+
+.candidatura-item:last-child {
+  border-bottom: none;
+}
+
+.candidatura-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.candidatura-item-header .candidato-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  flex: 1;
+}
+
+.candidatura-item-header .candidato-info .candidato-icon {
+  color: #dc3545;
+  margin-top: 3px;
+  font-size: 0.9rem;
+}
+
+.candidatura-item-header .candidato-info div {
+  text-align: left;
+}
+
+.candidatura-item-header .candidato-info .candidato-nome {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 3px 0;
+  text-align: left;
+}
+
+.candidatura-item-header .candidato-info .annuncio-titolo {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0;
+  text-align: left;
+}
+
+.candidatura-item-header .stato-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.candidatura-item-header .stato-badge.stato-inviata,
+.candidatura-item-header .stato-badge.stato-in-attesa {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.candidatura-item-header .stato-badge.stato-accettata {
+  background-color: #d1edff;
+  color: #0c5460;
+  border: 1px solid #74b9ff;
+}
+
+.candidatura-item-header .stato-badge.stato-rifiutata {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #ff7675;
+}
+
+.candidatura-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+}
+
+.candidatura-item-meta .candidatura-data {
+  font-size: 0.8rem;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.candidatura-item-meta .meta-icon {
+  font-size: 0.75rem;
+  color: #dc3545;
+}
+
+.candidatura-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.candidato-info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 5px 0;
+  text-align: left;
+}
+
+.candidato-info p {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: left;
+}
+
+.candidatura-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.in-attesa {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.status-badge.accettata {
+  background-color: #d1edff;
+  color: #0c5460;
+  border: 1px solid #74b9ff;
+}
+
+.status-badge.rifiutata {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #ff7675;
+}
+
+.candidatura-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.detail-item strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.candidatura-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.action-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 80px;
+  justify-content: center;
+}
+
+.action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.accept-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.accept-button:hover:not(:disabled) {
+  background-color: #218838;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.reject-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.reject-button:hover:not(:disabled) {
+  background-color: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.view-details-button {
+  background-color: #667eea;
+  color: white;
+}
+
+.view-details-button:hover {
+  background-color: #5a6fd8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.loading::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.no-candidature {
+  text-align: left;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.no-candidature h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+  color: #495057;
+}
+
+.no-candidature p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px;
+  text-align: center;
+  border: 1px solid #f5c6cb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .candidature-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .candidature-sidebar {
+    position: static;
+    order: 2;
+  }
+  
+  .candidatura-details {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .candidatura-actions {
+    flex-direction: column;
+  }
+  
+  .action-button {
+    justify-content: center;
+  }
+  
+  .gestisci-candidature-header h1 {
+    font-size: 2rem;
+  }
+    .gestisci-candidature-header p {
+    font-size: 1rem;
+  }
+}
+
+/* Stili per layout e messaggio no-selection */
+.no-selection-message {
+  padding: 60px 20px;
+  text-align: left;
+  color: #6c757d;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.no-selection-message p {
+  font-size: 1rem;
+  margin: 0;
+  text-align: left;
+}
+
+/* Stili aggiuntivi per il layout della pagina */
+.candidature-header {
+  background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.candidature-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.candidature-subtitle {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+  text-align: left;
+}
+
+.candidature-filters {
+  margin-bottom: 30px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border: 2px solid #e9ecef;
+  background: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #495057;
+}
+
+.filter-button:hover {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.filter-button.active {
+  background: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+.candidature-layout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.candidature-loading,
+.candidature-error {
+  text-align: left;
+  padding: 40px;
+  color: #6c757d;
+}
+
+.candidature-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+}
+
+.retry-button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.retry-button:hover {
+  background: #c82333;
+}
+
+@media (max-width: 480px) {
+  .gestisci-candidature-container {
+    padding: 10px;
+  }
+  
+  .gestisci-candidature-header {
+    padding: 20px;
+  }
+  
+  .candidatura-item {
+    padding: 20px;
+  }
+  
+  .candidatura-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+    .candidatura-status {
+    justify-content: flex-start;
+  }
+}
+
+/* Pannello dettagli candidatura - Layout pulito e professionale */
+.candidatura-detail {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  height: 70vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 20px;
+}
+
+.candidatura-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.candidato-detail-info {
+  flex: 1;
+  text-align: left;
+}
+
+.candidato-detail-nome {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 12px 0;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.candidato-email {
+  font-size: 1rem;
+  color: #dc3545;
+  margin: 0 0 8px 0;
+  text-align: left;
+  font-weight: 500;
+}
+
+.candidatura-detail-data {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0;
+  text-align: left;
+  font-weight: 400;
+}
+
+/* Azioni in alto a destra */
+.candidatura-actions-header {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.action-icon-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: all 0.2s ease;
+  background: transparent;
+  padding: 8px;
+}
+
+.accept-icon-button {
+  color: #28a745;
+}
+
+.accept-icon-button:hover {
+  color: #218838;
+  background-color: rgba(40, 167, 69, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+}
+
+.reject-icon-button {
+  color: #dc3545;
+}
+
+.reject-icon-button:hover {
+  color: #c82333;
+  background-color: rgba(220, 53, 69, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.2);
+}
+
+/* Sezione annuncio di riferimento */
+.annuncio-riferimento {
+  margin-bottom: 25px;
+}
+
+.annuncio-riferimento-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #495057;
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.annuncio-titolo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.annuncio-descrizione {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 0;
+  text-align: left;
+  line-height: 1.5;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #dc3545;
+}
+
+/* Stili per il contenuto markdown nella descrizione */
+.annuncio-descrizione h1,
+.annuncio-descrizione h2,
+.annuncio-descrizione h3,
+.annuncio-descrizione h4,
+.annuncio-descrizione h5,
+.annuncio-descrizione h6 {
+  color: #2c3e50;
+  margin: 0.5em 0;
+  font-weight: 600;
+}
+
+.annuncio-descrizione p {
+  margin: 0.5em 0;
+  line-height: 1.6;
+}
+
+.annuncio-descrizione ul,
+.annuncio-descrizione ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.annuncio-descrizione li {
+  margin: 0.25em 0;
+}
+
+.annuncio-descrizione strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.annuncio-descrizione em {
+  font-style: italic;
+  color: #495057;
+}
+
+.annuncio-descrizione code {
+  background-color: #e9ecef;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #dc3545;
+}
+
+.annuncio-descrizione blockquote {
+  border-left: 3px solid #dc3545;
+  margin: 1em 0;
+  padding-left: 1em;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* CV e Note sections */
+.candidato-cv {
+  margin-bottom: 25px;
+}
+
+.cv-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #495057;
+  margin: 0 0 15px 0;
+  text-align: left;
+}
+
+.cv-download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.cv-download-button:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.candidatura-note {
+  margin-bottom: 25px;
+}
+
+.note-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #495057;
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.note-content {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 0;
+  text-align: left;
+  line-height: 1.5;
+}

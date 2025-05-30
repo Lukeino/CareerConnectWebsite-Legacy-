@@ -1,0 +1,361 @@
+/* Stili globali - STESSI del recruiter */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* Contenitore principale */
+.register-container {
+  position: absolute;
+  top: 120px; /* Aumentato ulteriormente per far vedere completamente il titolo */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 15px;
+  box-sizing: border-box;
+  gap: 25px;
+}
+
+/* Contenitore della GIF */
+.gif-candidate-container {
+  position: absolute !important; /* Posizionamento assoluto per controllo totale */
+  top: 230px !important; /* Sposta la GIF MOLTO più in basso */
+  left: -120px !important; /* Sposta MOLTO più a sinistra */
+  z-index: 1; /* Assicura che sia visibile */
+  pointer-events: none; /* Permette ai clic di passare attraverso la GIF */
+}
+
+.candidate-gif {
+  width: 800px; /* Aumentata ulteriormente la larghezza della GIF */
+  height: auto;
+  border-radius: 10px; /* Bordi meno arrotondati */
+  box-shadow: none;
+  pointer-events: none; /* Permette ai clic di passare attraverso la GIF */
+}
+
+/* Wrapper per il titolo e il form */
+.form-and-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px; /* Ridotta larghezza massima */
+  width: 100%;
+  position: relative; /* Aggiunge posizionamento relativo */
+  z-index: 10; /* Z-index alto per essere sopra la GIF */
+}
+
+.form-title {
+  /* Styles matching welcome message "Ti diamo il benvenuto su CareerConnect!" */
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  color: #2c3e50 !important;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-top: 15px !important; /* Aggiunto spazio sopra il titolo */
+  margin-bottom: 25px !important; /* Ridotto spazio sotto il titolo */
+  text-align: center;
+  white-space: nowrap; /* Mantiene il titolo su una sola riga */
+}
+
+.form-title.hero-style {
+  font-size: 1.6rem !important; /* Stessa dimensione del recruiter */
+  font-weight: 700 !important;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif !important;
+  color: #2c3e50 !important;
+  margin-top: 15px !important;
+  margin-bottom: 25px !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  white-space: nowrap !important; /* Impedisce il wrapping su più righe */
+  overflow: visible !important;
+}
+
+/* Media queries per il titolo hero-style */
+@media (max-width: 768px) {
+  .form-title.hero-style {
+    font-size: 1.4rem !important; /* Ulteriormente ridotto per tablet */
+    margin-bottom: 20px !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-title.hero-style {
+    font-size: 1.2rem !important; /* Ridotto per mobile */
+    margin-bottom: 15px !important;
+    white-space: normal !important; /* Su mobile molto piccolo permettiamo il wrap se necessario */
+  }
+}
+
+/* Form wrapper */
+.form-wrapper {
+  background-color: #ffffff;
+  padding: 25px 35px; /* Ridotto padding interno */
+  border-radius: 10px; /* Bordi meno arrotondati */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Ombra ridotta */
+  width: 100%;
+  box-sizing: border-box;
+  position: relative; /* Aggiunge posizionamento relativo */
+  z-index: 10; /* Z-index alto per essere sicuri che sia sopra la GIF */
+}
+
+.login-wrapper {
+  max-width: 400px;
+}
+
+.register-wrapper {
+  max-width: 700px;
+}
+
+/* Form di login */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Input comuni */
+.form-input {
+  width: 100%;
+  padding: 10px 12px; /* Ridotto padding interno */
+  border-radius: 6px; /* Bordi meno arrotondati */
+  border: 1px solid #dcdcdc;
+  font-size: 0.95rem; /* Ridotta dimensione del font */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: #007bff; /* STESSO COLORE del recruiter */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* Label comuni */
+.form-label {
+  display: block;
+  margin-bottom: 6px; /* Ridotto spazio sotto la label */
+  font-weight: 600;
+  color: #555;
+  text-align: left;
+}
+
+/* Gruppo di input */
+.input-group {
+  margin-bottom: 15px; /* Ridotto spazio tra i gruppi */
+}
+
+/* Stile per il testo dell'informativa privacy */
+.privacy-notice {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 20px 0 15px;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 10px;
+}
+
+/* Wrapper per input password con icona */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Input password */
+.password-input {
+  padding-right: 45px !important; /* Spazio per l'icona */
+}
+
+/* Pulsante toggle password */
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  font-size: 1.1rem;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.password-toggle-btn:hover {
+  color: #333;
+}
+
+.password-toggle-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.password-toggle-btn:focus {
+  outline: none;
+  color: #0d7bd4; /* Colore blu del candidato */
+}
+
+.input-row {
+  display: flex;
+  gap: 15px; /* Ridotto gap tra le colonne */
+  margin-bottom: 15px; /* Ridotto spazio sotto la riga */
+  flex-wrap: wrap;
+}
+
+.input-col {
+  flex: 1;
+  min-width: 200px; /* Ridotta larghezza minima */
+}
+
+/* Bottoni */
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-primary-candidate {
+  background-color: #0d7bd4; /* Blu per il candidato */
+  color: #fff;
+}
+
+.btn-primary-candidate:hover {
+  background-color: #0969ba; /* Blu più scuro per l'hover del candidato */
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-success-candidate {
+  background-color: #28a745; /* Verde per il pulsante di accesso del candidato */
+  color: #fff;
+}
+
+.btn-success-candidate:hover {
+  background-color: #218838;
+}
+
+.btn-wide {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Messaggi di feedback */
+.message {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.message-success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.message-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* Media Queries per la responsività */
+@media (max-width: 992px) {
+  .register-container {
+    position: absolute;
+    top: 60px; /* Ridotto su tablet ma mantenendo visibile il titolo */
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Centra gli elementi su mobile */
+    padding: 0 15px;
+  }
+  .gif-container {
+    margin-top: 30px; /* Ridotto margin-top su tablet */
+    padding-left: 0; /* Rimuove padding su tablet */
+  }
+
+  .candidato-gif {
+    width: 350px; /* Dimensione intermedia su tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .form-wrapper {
+    padding: 20px; /* Riduci il padding su schermi più piccoli */
+  }
+
+  .input-row {
+    flex-direction: column; /* Impila le colonne su schermi più piccoli */
+    gap: 10px; /* Riduci lo spazio tra gli input impilati */
+  }
+
+  .input-col {
+    min-width: unset; /* Rimuovi la larghezza minima quando impilato */
+  }
+  
+  .form-title {
+    font-size: 1.6em; /* Riduci la dimensione del titolo */
+    margin-bottom: 20px !important;
+  }    .candidato-gif {
+    width: 250px; /* Dimensione media su mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 1.4em; /* Ulteriore riduzione del titolo */
+    margin-bottom: 15px !important;
+  }
+
+  .form-wrapper {
+    padding: 15px; /* Ulteriore riduzione del padding */
+  }  .candidato-gif {
+    width: 200px; /* Dimensione piccola su mobile */
+  }.register-container {
+    position: absolute;
+    top: 40px; /* Ridotto su mobile ma mantenendo visibile il titolo */
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    align-items: center;
+  }
+}

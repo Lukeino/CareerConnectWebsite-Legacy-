@@ -1,0 +1,471 @@
+/* Stili per il form di modifica profilo candidato con colori blu */
+.candidate-profile-container {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  margin: 0;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.candidate-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px 0 40px;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.candidate-profile-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #007bff; /* Blu principale invece del rosso */
+  text-align: left;
+}
+
+.candidate-edit-button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); /* Gradiente blu */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* Ombra blu */
+}
+
+.candidate-edit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.candidate-edit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.candidate-profile-message {
+  margin: 0 auto 20px auto;
+  padding: 15px 40px;
+  font-weight: 600;
+  max-width: 900px;
+  text-align: left;
+}
+
+.candidate-profile-message.success {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+}
+
+.candidate-profile-message.error {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+}
+
+.candidate-profile-form {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.candidate-profile-image-section {
+  flex-shrink: 0;
+  padding-top: 10px;
+}
+
+.candidate-profile-image-large {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #007bff; /* Bordo blu */
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2); /* Ombra blu */
+}
+
+.candidate-profile-details {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  width: 100%;
+}
+
+.candidate-form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.candidate-form-group:nth-child(1) {
+  grid-column: 1 / 3; /* Username occupa entrambe le colonne */
+}
+
+.candidate-form-group:nth-child(4) {
+  grid-column: 1 / 3; /* Email occupa entrambe le colonne */
+}
+
+.candidate-form-group:nth-child(5) {
+  grid-column: 1 / 3; /* CV occupa entrambe le colonne */
+}
+
+.candidate-form-actions {
+  grid-column: 1 / 3;
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.candidate-form-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.candidate-form-input {
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.candidate-form-input:focus {
+  outline: none;
+  border-color: #007bff; /* Bordo blu al focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); /* Ombra blu al focus */
+}
+
+.candidate-form-input:disabled {
+  background-color: #f8f9fa;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.candidate-form-display {
+  padding: 12px 15px;
+  background: #f8f9fa;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.candidate-username-display {
+  padding: 12px 15px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.candidate-username-display:hover {
+  border-color: #007bff; /* Bordo blu all'hover */
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1); /* Ombra blu */
+}
+
+.candidate-username-text {
+  font-weight: 600;
+  color: #007bff; /* Testo blu */
+  font-size: 1rem;
+}
+
+.candidate-edit-hint {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+}
+
+.candidate-save-button {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.candidate-save-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.candidate-save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.candidate-cancel-button {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+}
+
+.candidate-cancel-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+}
+
+.candidate-cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Stili per la sezione CV */
+.candidate-cv-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.candidate-cv-current {
+  padding: 15px;
+  background: linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%);
+  border: 2px solid #007bff;
+  border-radius: 8px;
+}
+
+.candidate-cv-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.candidate-cv-filename {
+  font-weight: 600;
+  color: #007bff;
+  font-size: 1rem;
+}
+
+.candidate-cv-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.candidate-cv-download {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.candidate-cv-download:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.candidate-cv-remove {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.candidate-cv-remove:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.candidate-cv-empty {
+  padding: 15px;
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.candidate-cv-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+}
+
+.candidate-cv-input {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.candidate-cv-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.candidate-cv-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+}
+
+.candidate-cv-selected span {
+  color: #155724;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.candidate-cv-upload-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.candidate-cv-upload-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.candidate-cv-upload-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .candidate-profile-form {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .candidate-profile-details {
+    grid-template-columns: 1fr;
+  }
+
+  .candidate-form-group:nth-child(1),
+  .candidate-form-group:nth-child(4) {
+    grid-column: 1;
+  }
+
+  .candidate-form-actions {
+    grid-column: 1;
+    flex-direction: column;
+  }
+
+  .candidate-profile-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .candidate-profile-image-large {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+
+  .candidate-cv-info {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .candidate-cv-selected {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
+/* Nuovi stili migliorati per upload CV */
+.candidate-cv-upload-label {
+  display: inline-block;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+  max-width: 200px;
+}
+
+.candidate-cv-upload-label:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.candidate-cv-upload-text {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.candidate-cv-input {
+  display: none; /* Nascondi l'input reale */
+}
+
+.candidate-cv-note {
+  margin-top: 8px;
+  color: #6c757d;
+  font-style: italic;
+}

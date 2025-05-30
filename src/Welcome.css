@@ -1,0 +1,554 @@
+/* Welcome page layout */
+.welcome-container {
+  width: 100%;
+  min-height: calc(100vh - 90px);
+  /* Sfondo delicato fisso senza animazione */
+  background: transparent;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container trasparente superiore */
+.welcome-hero-container {
+  width: 95%;
+  max-width: 1200px;
+  min-height: 200px;
+  margin: 40px auto 20px auto;
+  background: rgba(255, 255, 255, 0.25); /* Aumento l'opacità da 0.1 a 0.25 */
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  backdrop-filter: blur(8px); /* Aumento anche il blur da 5px a 8px */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Aumento il border da 0.2 a 0.3 */
+  box-sizing: border-box;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+  color: #2c3e50;
+  padding-right: 40px;
+}
+
+.hero-image {
+  flex: 0 0 auto;
+  max-width: 450px;
+  margin-top: 30px;
+  margin-left: -20px;
+}
+
+.hero-image-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+  font-weight: 400;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.4;
+}
+
+/* Pulsante CTA nel hero content */
+.hero-content .hero-cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #0d7bd4, #0969ba);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.hero-content .hero-cta-button:hover {
+  background: linear-gradient(135deg, #0969ba, #085a9e);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content .hero-cta-button:active {
+  transform: translateY(0);
+}
+
+/* Container principale trasparente - NASCOSTO */
+.welcome-main-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: transparent; /* Completamente trasparente */
+  border-radius: 15px;
+  padding: 30px;
+  box-sizing: border-box;
+  /* Rimuovo tutti gli effetti visivi */
+}
+
+/* Layout delle 3 schede dashboard */
+.dashboard-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card:hover {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-card.with-background {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px 20px 30px 20px;
+}
+
+.dashboard-card.with-background .card-title,
+.dashboard-card.with-background .card-description {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(2px);
+}
+
+.dashboard-card.with-background .card-title {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: #2c3e50;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.card-icon-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.card-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.dashboard-card:hover .card-icon-img {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.dashboard-card .card-title,
+.dashboard-card .card-description,
+.dashboard-card .card-button {
+  position: relative;
+  z-index: 2;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.card-button {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-button:hover {
+  background: linear-gradient(135deg, #1a252f, #2c3e50);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+}
+
+.card-button.primary {
+  background: linear-gradient(135deg, #0d7bd4, #0969ba);
+}
+
+.card-button.primary:hover {
+  background: linear-gradient(135deg, #0969ba, #085a9e);
+}
+
+/* Sezione annunci di lavoro sotto le cards */
+.job-listings-section {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #e9ecef;
+}
+
+.job-listings-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.annunci-list {
+  display: grid;
+  gap: 20px;
+}
+
+.annuncio-item {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 25px;
+  border-left: 4px solid #2c3e50;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.annuncio-item:hover {
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateX(5px);
+}
+
+.annuncio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.annuncio-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.annuncio-company {
+  font-size: 1rem;
+  color: #0d7bd4;
+  font-weight: 500;
+}
+
+.annuncio-description {
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.annuncio-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.annuncio-date {
+  font-style: italic;
+}
+
+.annuncio-type {
+  background: #2c3e50;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Loading e error states */
+.loading-message, .error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1rem;
+}
+
+.loading-message {
+  color: #6c757d;
+}
+
+.error-message {
+  color: #dc3545;
+  background: #ffebee;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+}
+
+/* Statistiche recruiter nella sezione hero */
+.recruiter-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  margin-bottom: 5px;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.2;
+}
+
+/* Media queries per le statistiche */
+@media (max-width: 768px) {
+  .recruiter-stats {
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .stat-item {
+    min-width: 110px;
+    padding: 15px 20px;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recruiter-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .stat-item {
+    min-width: 200px;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .dashboard-cards-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .welcome-hero-container {
+    height: 150px;
+    margin: 20px auto 15px auto;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .welcome-main-container {
+    width: 95%;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-hero-container {
+    height: 120px;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .welcome-main-container {
+    padding: 20px;
+  }
+  
+  .dashboard-card {
+    padding: 20px 15px;
+  }
+  
+  .card-icon {
+    font-size: 2.5rem;
+  }
+  
+  .hero-image {
+    max-width: 280px;
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+
+/* ========================================
+   VARIANTI DI SFONDI DELICATI ALTERNATIVI
+   ======================================== */
+
+/* 
+🎨 VARIANTE 1: Pattern geometrico delicato
+Sostituisci il background attuale in .welcome-container con questo:
+
+background: 
+  repeating-linear-gradient(
+    45deg,
+    rgba(99, 102, 241, 0.03) 0px,
+    rgba(99, 102, 241, 0.03) 1px,
+    transparent 1px,
+    transparent 20px
+  ),
+  repeating-linear-gradient(
+    -45deg,
+    rgba(168, 85, 247, 0.02) 0px,
+    rgba(168, 85, 247, 0.02) 1px,
+    transparent 1px,
+    transparent 20px
+  ),
+  linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+*/
+
+/* 
+🌊 VARIANTE 2: Onde fluide (richiede installazione di react-particles)
+npm install react-particles
+Per un effetto più dinamico
+*/
+
+/* 
+🌟 VARIANTE 3: Pattern a punti delicati
+Sostituisci il background attuale in .welcome-container con questo:
+
+background-image: 
+  radial-gradient(circle, rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+background-size: 30px 30px;
+background-color: #f8fafc;
+*/
+
+/* 
+🔷 VARIANTE 4: Esagoni delicati
+Sostituisci il background attuale in .welcome-container con questo:
+
+background-color: #f8fafc;
+background-image: 
+  repeating-conic-gradient(
+    from 30deg at 50% 50%,
+    rgba(99, 102, 241, 0.1) 0deg,
+    rgba(99, 102, 241, 0.1) 60deg,
+    transparent 60deg,
+    transparent 120deg
+  );
+background-size: 60px 60px;
+*/
+
+/* 
+💫 VARIANTE 5: Gradiente animato multicolore
+Sostituisci il background attuale in .welcome-container con questo:
+
+background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+animation: gradientShift 15s ease infinite;
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+*/
