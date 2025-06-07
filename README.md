@@ -1,48 +1,12 @@
-# 💼 CareerConnect
+# React + Vite
 
-CareerConnect è una piattaforma web progettata per facilitare l'incontro tra candidati in cerca di lavoro e aziende in cerca di nuovi talenti. Gli utenti possono creare il proprio profilo, caricare un CV, cercare offerte e candidarsi direttamente tramite il sito.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🚀 Obiettivi del progetto
+Currently, two official plugins are available:
 
-- Offrire una piattaforma semplice e accessibile per cercare e offrire lavoro.
-- Consentire agli utenti di gestire facilmente il proprio profilo professionale.
-- Fornire alle aziende strumenti intuitivi per pubblicare e gestire offerte di lavoro.
-- Progetto sviluppato a scopo didattico universitario.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
----
+## Expanding the ESLint configuration
 
-## 🧰 Stack Tecnologico
-
-| Front-end      | Back-end      | Altri strumenti |
-|----------------|---------------|-----------------|
-| React + Vite   | Strapi (Headless CMS) | --- |
-| CSS            | REST API Strapi | Git + GitHub |
-
----
-
-## ⚙️ Installazione del progetto
-
-1. **Clona il repository**
-
-```bash
-git clone https://github.com/NOME-UTENTE/CareerConnect.git
-cd CareerConnect
-```
-
-2. **Installa le dipendenze**
-
-```bash
-npm install
-```
-
-3. **Avvia il progetto (in modalità sviluppo)**
-```bash
-npm run dev
-```
-🔧 Assicurati di avere un'istanza Strapi in esecuzione per testare le funzionalità connesse al database.
-
----
-
-📓 Devlog: [docs/devlog.md](./docs/devlog.md)
-
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
